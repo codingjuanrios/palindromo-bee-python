@@ -45,7 +45,7 @@ class PalindrApp(toga.App):
             style=Pack(direction=COLUMN, flex=1, alignment=BOTTOM, padding=(0,5))
         )
 
-        with open("src/palindrapp/resources/listado.json", "r", ) as read_file:
+        with open("src/palindrapp/resources/listado.json", "r", encoding="utf-8") as read_file:
             listado = json.load(read_file)
             elegido = random.choice(listado)['palindromo']
             regalo_label = toga.Label(
