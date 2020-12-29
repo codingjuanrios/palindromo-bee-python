@@ -42,17 +42,17 @@ class PalindrApp(toga.App):
 
         saber_label = toga.Label(
             'Aquí tiene un palíndromo de regalo: ',
-            style=Pack(direction=COLUMN, flex=1, alignment=BOTTOM, padding=(0,5))
+            style=Pack(direction=COLUMN, alignment=BOTTOM, padding=(0,5))
         )
 
-        with open("src/palindrapp/resources/listado.json", "r", encoding="utf-8") as read_file:
+        with open("src/pallindrapp/resources/listado.json", "r", encoding="utf-8") as read_file:
             listado = json.load(read_file)
             elegido = random.choice(listado)['palindromo']
             regalo_label = toga.Label(
                 "{}".format(elegido)
             )
 
-        regalo_box = toga.Box(style=Pack(direction=ROW, padding=5, background_color=red))
+        regalo_box = toga.Box(style=Pack(direction=ROW, padding=5))
         regalo_box.add(saber_label)
         regalo_box.add(regalo_label)
 
